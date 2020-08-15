@@ -1,0 +1,8 @@
+.section {
+  padding: $xl 0;
+
+  /* stylelint-disable */
+  &--nsb {
+    padding-bottom: 0;
+  }
+}

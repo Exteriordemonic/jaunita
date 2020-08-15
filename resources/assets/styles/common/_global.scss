@@ -1,0 +1,15 @@
+/* stylelint-disable */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @extend %body;
+}
+
+
+main {
+  @include mediaTo(sm) {
+    margin-top: 0 !important;
+  }
+}

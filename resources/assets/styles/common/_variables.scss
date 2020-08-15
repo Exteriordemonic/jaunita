@@ -1,0 +1,43 @@
+/** Import Bootstrap functions */
+@import "~bootstrap/scss/functions";
+
+$white: #fff;
+$gray: #ccc;
+$gray-light: #f7f7f7;
+$dark: #444;
+$special: #05c792;
+$special-dark: #24876b;
+$special-light: #cdf4e9;
+
+// FORM
+$succes: #6fce72;
+$neutral: #5f8ee4;
+$error: #e4655f;
+$warrinig: #e7aa27;
+$placeholder: #e6e6e6;
+
+/** Bootstrap navbar fix (https://git.io/fADqW) */
+$navbar-dark-toggler-icon-bg: none;
+$navbar-light-toggler-icon-bg: none;
+
+// Sizes
+$gutter: 10px;
+$xs: $gutter * 0.5;
+$s: $gutter;
+$m: $gutter * 1.5;
+$l: $gutter * 3;
+$xl: $gutter * 5;
+$xxl: $gutter * 10;
+
+// Font weight
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 600;
+$fw-bold: 900;
+
+$media: (xs: 576px, sm: 767px, md: 992px, lg: 1280px, xl: 1440px);
+
+$transition: 0.3s;
+$cubic: cubic-bezier(0.5, 0.31, 0.84, 0.74);
+
+$z-index: (header: 100, cookies: 200, preloader: 300, );

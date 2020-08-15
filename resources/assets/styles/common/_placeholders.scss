@@ -1,0 +1,36 @@
+%position-0 {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+%absolute {
+  @extend %position-0;
+
+  position: absolute;
+}
+
+%pseudo {
+  @extend %absolute;
+
+  content: "";
+}
+
+%flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%reset-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+%image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
