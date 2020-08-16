@@ -1,0 +1,50 @@
+.hamburger {
+  $root: &;
+
+  border: 0;
+  background-color: transparent;
+  width: $l;
+  height: $m + $xs;
+  position: relative;
+  transition: $transition;
+
+  &__line {
+    @extend %absolute;
+
+    display: inline-block;
+    width: 100%;
+    height: $gutter * 0.3;
+    background-color: $special;
+    border-radius: $gutter * 0.2;
+    margin: auto;
+    transition: $transition;
+
+    &:first-child {
+      bottom: unset;
+    }
+
+    &:last-child {
+      bottom: unset;
+      top: 100%;
+      transform: translateY(-100%);
+    }
+  }
+
+  &.-is-active {
+    #{$root}__line {
+      transform: rotate(45deg);
+      width: 80%;
+
+      &:first-child {
+        bottom: 0;
+        transform: rotate(-45deg);
+      }
+
+      &:last-child {
+        bottom: unset;
+        top: 50%;
+        opacity: 0;
+      }
+    }
+  }
+}

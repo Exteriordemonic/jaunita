@@ -2,7 +2,7 @@
   max-width: 100% !important;
   padding: 0 $xl;
 
-  @include mediaTo(sm) {
+  @include mediaTo(md) {
     padding: 0 $l;
   }
 }

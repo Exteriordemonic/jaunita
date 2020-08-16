@@ -1,0 +1,14 @@
+.logo {
+  @include cssLock("width", 992, 1920, (100, 320));
+
+  display: inline-block;
+  z-index: 10;
+
+  @include mediaTo(md) {
+    width: $gutter * 12;
+  }
+
+  &__image {
+    @extend %image;
+  }
+}

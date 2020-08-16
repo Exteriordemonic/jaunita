@@ -3,6 +3,8 @@ module.exports = {
   'rules': {
     'no-empty-source': null,
     'string-quotes': 'double',
+    'selector-combinator-space-after': 'never',
+    'selector-combinator-space-before': 'never',
     'at-rule-no-unknown': [
       true,
       {

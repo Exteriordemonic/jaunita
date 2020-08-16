@@ -1,0 +1,80 @@
+.menu {
+  $root: &;
+
+  @extend %flex;
+  @extend %reset-list;
+
+  @include mediaTo(sm) {
+    flex-direction: column;
+  }
+
+  &-item {
+    @extend %link;
+
+    @include cssLock("padding", 360, 1920, (5, 20));
+
+    padding-top: 0;
+    padding-bottom: 0;
+    color: $light;
+    transition: $transition;
+
+    @include mediaTo(sm) {
+      font-size: 20px;
+      margin-bottom: $m;
+      animation: showMenuLink $transition both;
+    }
+
+    &--rounded {
+      a {
+        @extend .button;
+
+        @include mediaTo(sm) {
+          font-size: 18px;
+          height: auto;
+        }
+      }
+    }
+
+    &--icon {
+      a {
+        @extend .button--icon;
+      }
+
+      @include mediaTo(md) {
+        display: none;
+      }
+    }
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &:first-child {
+      padding-left: 0 !important;
+    }
+
+    &:last-child {
+      padding-right: 0 !important;
+    }
+  }
+
+  &--settings {
+    @include cssLock("margin-left", 360, 1920, (15, 30));
+
+    #{$root}-item {
+      @include cssLock("padding", 360, 1920, (0, 15));
+    }
+  }
+}
+
+@keyframes showMenuLink {
+  0% {
+    opacity: 0;
+    transform: translateY(-$l);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -5,6 +5,9 @@
 
 body {
   @extend %body;
+
+  background: $dark !important;
+  height: 100vh;
 }
 
 
@@ -12,4 +15,13 @@ main {
   @include mediaTo(sm) {
     margin-top: 0 !important;
   }
+}
+
+a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+html #wpadminbar {
+  opacity: 0.1;
 }

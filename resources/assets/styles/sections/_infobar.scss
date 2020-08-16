@@ -5,10 +5,15 @@
   background-color: $dark;
   text-align: center;
   padding: $xs 0;
+  height: $l;
 
   &__text {
     @extend %text;
 
     color: $light;
+  }
+
+  &+.header {
+    top: $l;
   }
 }

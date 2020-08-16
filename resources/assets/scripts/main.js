@@ -2,7 +2,7 @@
 import 'jquery';
 import AOS from 'aos';
 
-// Import everything from autoload
+// import everything from autoload
 import './autoload/**/*'
 
 // import local dependencies
@@ -10,6 +10,9 @@ import Router from './util/Router';
 import common from './routes/common';
 import home from './routes/home';
 import aboutUs from './routes/about';
+
+// import Components
+import Toggle from './components/toggle';
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
@@ -26,6 +29,8 @@ jQuery(document).ready(() => {
   routes.loadEvents();
 
   setTimeout(() => {
+    Toggle.init();
+
     window.dispatchEvent(new Event('resize'));
     AOS.init();
   }, 300)

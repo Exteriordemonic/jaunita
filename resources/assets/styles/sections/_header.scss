@@ -1,0 +1,42 @@
+.header {
+  @extend %position-0;
+
+  position: fixed;
+  bottom: unset;
+  padding: $m 0;
+
+  &__wrapper {
+    @extend %flex;
+
+    justify-content: space-between;
+  }
+
+  &__nav {
+    @extend %flex;
+
+    @include mediaTo(sm) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      display: none;
+      padding-top: $xl + $l;
+      background-color: $dark;
+
+      &.-is-active {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__hamburger {
+    display: none;
+    z-index: 10;
+
+    @include mediaTo(sm) {
+      display: block;
+    }
+  }
+}
