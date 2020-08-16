@@ -4,6 +4,7 @@
   position: fixed;
   bottom: unset;
   padding: $m 0;
+  z-index: z-index("header");
 
   &__wrapper {
     @extend %flex;
@@ -23,6 +24,8 @@
       display: none;
       padding-top: $xl + $l;
       background-color: $dark;
+      height: 100vh;
+      justify-content: flex-start;
 
       &.-is-active {
         display: flex;

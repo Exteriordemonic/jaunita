@@ -5,7 +5,8 @@
   background-color: $dark;
   text-align: center;
   padding: $xs 0;
-  height: $l;
+  min-height: $l;
+  z-index: z-index("infobar");
 
   &__text {
     @extend %text;

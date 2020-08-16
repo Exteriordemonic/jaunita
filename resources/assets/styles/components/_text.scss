@@ -54,5 +54,5 @@
   @extend %body;
   @extend %resetSpaces;
 
-  @include cssLock("font-size", 360, 1920, (9, 18));
+  @include cssLock("font-size", 360, 1920, (12, 18));
 }

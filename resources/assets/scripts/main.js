@@ -13,6 +13,7 @@ import aboutUs from './routes/about';
 
 // import Components
 import Toggle from './components/toggle';
+import Hero from './components/hero';
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
@@ -30,6 +31,7 @@ jQuery(document).ready(() => {
 
   setTimeout(() => {
     Toggle.init();
+    Hero.init();
 
     window.dispatchEvent(new Event('resize'));
     AOS.init();

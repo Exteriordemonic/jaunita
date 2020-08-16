@@ -8,6 +8,10 @@
     flex-direction: column;
   }
 
+  a {
+    color: $light;
+  }
+
   &-item {
     @extend %link;
 

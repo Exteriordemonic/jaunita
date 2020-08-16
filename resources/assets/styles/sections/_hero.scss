@@ -1,0 +1,109 @@
+.hero {
+  color: $light;
+
+  &__wrapper {
+    @extend %reset-list;
+  }
+
+  &__item {
+    @extend %flex;
+
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+  }
+
+  &__image {
+    @extend %image;
+    @extend %absolute;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 10;
+    width: 45%;
+    padding-left: 5%;
+
+    @include mediaTo(md) {
+      width: 65%;
+    }
+
+    @include mediaTo(sm) {
+      width: 90%;
+    }
+  }
+
+  &__title {
+    @extend %title;
+    @extend %heartTitle;
+
+    margin-bottom: $l;
+  }
+
+  &__subtitle {
+    @extend %subtitle;
+
+    margin-bottom: $xl;
+  }
+
+  .flickity-page-dots {
+    @extend %flex;
+
+    top: unset;
+    bottom: $xl;
+    height: $xl;
+    justify-content: flex-start;
+    padding-left: $xl;
+
+    @include mediaTo(md) {
+      padding-left: $l;
+    }
+
+    .dot {
+      width: $xl - $s;
+      height: $m;
+      border-radius: $xl;
+      background-color: $gray;
+      opacity: 1;
+
+      &.is-selected {
+        background-color: $special;
+      }
+    }
+  }
+
+  .flickity-button {
+    background-color: transparent;
+    top: unset;
+    bottom: $xl;
+    box-shadow: none !important;
+    transform: translateY(0);
+    height: $xl;
+    z-index: 10;
+
+    &.next {
+      right: $xl;
+
+      @include mediaTo(md) {
+        right: $l;
+      }
+    }
+
+    &.previous {
+      left: unset;
+      right: $xl + $l;
+
+      @include mediaTo(md) {
+        right: $l + $l;
+      }
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    svg {
+      fill: $light;
+    }
+  }
+}

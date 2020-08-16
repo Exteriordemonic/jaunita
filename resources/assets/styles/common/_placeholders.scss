@@ -34,3 +34,19 @@
   height: 100%;
   object-fit: cover;
 }
+
+%heartTitle {
+  &::after {
+    content: "";
+    width: $l;
+    height: $l;
+    display: inline-block;
+    background-image: url("../icons/heart.svg");
+    background-size: cover;
+
+    @media (max-width: 767px) {
+      width: $m;
+      height: $m;
+    }
+  }
+}
