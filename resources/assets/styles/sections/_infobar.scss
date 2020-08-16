@@ -1,0 +1,14 @@
+.infobar {
+  @extend %absolute;
+
+  bottom: unset;
+  background-color: $dark;
+  text-align: center;
+  padding: $xs 0;
+
+  &__text {
+    @extend %text;
+
+    color: $light;
+  }
+}

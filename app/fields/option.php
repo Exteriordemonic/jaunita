@@ -14,7 +14,7 @@ $option_page
         ->addText('infobar_text', ['label' => 'Infobar text'])
     ->addTab('Header', ['label' => 'Header', 'placement' => 'left'])
         ->addImage('logo')
-    ->addTab('Header', ['label' => 'Header', 'placement' => 'left'])
+    ->addTab('Request an Appointment', ['label' => 'Header', 'placement' => 'left'])
         ->addText('request-an-appointment-shortcode', ['label'=>'Request an Appointment short code form'])
     ;
         

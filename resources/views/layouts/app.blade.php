@@ -1,7 +1,7 @@
 <!doctype html>
 <html {!! get_language_attributes() !!}>
   @include('partials.head')
-  <body @php body_class() @endphp>
+  <body {!! body_class() !!}>
     @include('sections.infobar')
     @php do_action('get_header') @endphp
     @include('partials.header')
