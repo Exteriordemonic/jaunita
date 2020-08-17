@@ -1,5 +1,5 @@
 .container {
-  max-width: 100% !important;
+  max-width: $gutter * 144 !important;
   padding: 0 $xl;
 
   @include mediaTo(md) {

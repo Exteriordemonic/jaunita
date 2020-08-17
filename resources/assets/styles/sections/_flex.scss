@@ -1,0 +1,129 @@
+.flex {
+  $root: &;
+
+  &--gray {
+    background-color: $gray-light;
+  }
+
+  &--right {
+    #{$root}__wrapper {
+      grid-template-columns: 5fr 4fr;
+    }
+
+    #{$root}__content {
+      order: -1;
+      padding-left: 10%;
+
+      @include mediaTo(md) {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &--pattern {
+    position: relative;
+
+    &::before {
+      @extend %absolute;
+
+      content: url("../icons/traces.svg");
+      width: $xxl*3;
+      height: 100%;
+      display: inline-block;
+      background-size: cover;
+      overflow: hidden;
+      transform: translateX(-30%);
+      z-index: 1;
+
+      @include mediaTo(md) {
+        display: none;
+      }
+    }
+
+    &::after {
+      @extend %absolute;
+
+      content: url("../icons/traces.svg");
+      width: $xxl*3;
+      height: 100%;
+      display: inline-block;
+      background-size: cover;
+      overflow: hidden;
+      left: unset;
+      z-index: 1;
+
+      @include mediaTo(md) {
+        display: none;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 4fr 5fr;
+    gap: $l;
+    z-index: 10;
+
+    @include mediaTo(md) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__image-wrapper {
+    margin-bottom: 0;
+    z-index: 10;
+
+    @include mediaTo(md) {
+      margin: 0 !important;
+    }
+  }
+
+  &__image {
+    @extend %image;
+
+    object-fit: contain;
+  }
+
+  &__content {
+    align-self: center;
+    z-index: 20;
+    padding-right: 10%;
+
+    @include mediaTo(md) {
+      padding-right: 0;
+    }
+  }
+
+  &__title {
+    @extend %sectionTitle;
+    @extend %heartTitleSmall;
+
+    margin-bottom: $m;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__subtitle {
+    @extend %sectionSubtitle;
+    @extend %heartTitleSmall;
+
+    margin-bottom: $l + $s;
+    color: $special;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    @extend %text;
+
+    margin-bottom: $l;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -50,3 +50,17 @@
     }
   }
 }
+
+%heartTitleSmall {
+  @extend %heartTitle;
+
+  &::after {
+    width: $m;
+    height: $m;
+
+    @media (max-width: 767px) {
+      width: $s;
+      height: $s;
+    }
+  }
+}

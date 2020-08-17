@@ -41,6 +41,8 @@
   @extend %resetSpaces;
 
   @include cssLock("font-size", 360, 1920, (9, 18));
+
+  line-height: 1.9;
 }
 
 %link {
