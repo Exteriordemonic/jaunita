@@ -14,7 +14,7 @@
     $link = $content['link'];
 @endphp
 
-<section class="flex flex--{{ $color }} flex--{{ $direction }} flex--{{ $pattern }} section">
+<section class="flex section--{{ $color }} flex--{{ $direction }} flex--{{ $pattern }} section">
     <div class="flex__wrapper container">
         <figure class="flex__image-wrapper" style="margin-top: {{ -$offset_top }}%; margin-bottom: {{ -$offset_bottom }}%;">
             {!! image($img, 'full', 'flex__image') !!}

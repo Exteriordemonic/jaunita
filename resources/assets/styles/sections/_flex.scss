@@ -1,13 +1,13 @@
 .flex {
   $root: &;
 
-  &--gray {
-    background-color: $gray-light;
-  }
-
   &--right {
     #{$root}__wrapper {
       grid-template-columns: 5fr 4fr;
+
+      @include mediaTo(md) {
+        grid-template-columns: 1fr;
+      }
     }
 
     #{$root}__content {
@@ -16,6 +16,7 @@
 
       @include mediaTo(md) {
         padding-left: 0;
+        order: 0;
       }
     }
   }

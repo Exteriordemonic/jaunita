@@ -33,14 +33,14 @@
 
   font-weight: $fw-bold;
 
-  @include cssLock("font-size", 360, 1920, (12, 24));
+  @include cssLock("font-size", 360, 1920, (16, 24));
 }
 
 %text {
   @extend %body;
   @extend %resetSpaces;
 
-  @include cssLock("font-size", 360, 1920, (9, 18));
+  @include cssLock("font-size", 360, 1920, (14, 18));
 
   line-height: 1.9;
 }
@@ -49,12 +49,12 @@
   @extend %body;
   @extend %resetSpaces;
 
-  @include cssLock("font-size", 360, 1920, (9, 18));
+  @include cssLock("font-size", 360, 1920, (14, 18));
 }
 
 %button {
   @extend %body;
   @extend %resetSpaces;
 
-  @include cssLock("font-size", 360, 1920, (12, 18));
+  @include cssLock("font-size", 360, 1920, (14, 18));
 }

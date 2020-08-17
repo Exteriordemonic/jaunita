@@ -1,0 +1,79 @@
+.services {
+  $root: &;
+
+  &__content {
+    max-width: $gutter * 100;
+    margin: $l auto $xxl;
+  }
+
+  &__title {
+    @extend %sectionTitle;
+    @extend %heartTitleSmall;
+
+    margin-bottom: $xl;
+    text-align: center;
+  }
+
+  &__text {
+    @extend %text;
+  }
+
+  &__list {
+    @extend %reset-list;
+
+    @include cssLock("gap", 360, 1920, (30, 90));
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: $l;
+
+    @include mediaTo(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mediaTo(sm) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    margin: 0 auto $m;
+    background: $special-dark;
+    width: 60%;
+    padding-top: 60%;
+    border-radius: 100%;
+    transition: $transition;
+
+    &:hover {
+      background: $special;
+
+      #{$root}__image {
+        filter: brightness(0) invert(0) grayscale(0.6);
+      }
+    }
+  }
+
+  &__image {
+    @extend %absolute;
+    @extend %image;
+
+    object-fit: contain;
+    height: 60%;
+    max-width: 60%;
+    margin: auto;
+    filter: brightness(0) invert(1);
+    transition: $transition;
+
+    &:hover {
+      filter: brightness(0) invert(0) grayscale(0.6);
+    }
+  }
+
+  &__subtitle {
+    @extend %sectionSubtitle;
+
+    text-align: center;
+    margin-bottom: $m;
+  }
+}

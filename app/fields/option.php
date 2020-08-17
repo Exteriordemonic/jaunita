@@ -15,7 +15,15 @@ $option_page
     ->addTab('Header', ['label' => 'Header', 'placement' => 'left'])
         ->addImage('logo')
     ->addTab('Appointment', ['label' => 'Appointment', 'placement' => 'left'])
-        ->addLink('appointment',['label'=>'Request an Appointment']);
+        ->addLink('appointment',['label'=>'Request an Appointment'])
+    ->addTab('Services', ['label' => 'Services', 'placement' => 'left'])
+        ->addText('services_title', ['label'=>'Title'])
+        ->addTextarea('services_text', ['label'=>'Text'])
+        ->addRepeater('services', ['label'=>'Services'])
+            ->addImage('icon', ['label'=>'Icon'])
+            ->addGroup('content', ['label'=>''])
+                ->addText('title', ['label'=>'Title'])
+                ->addTextarea('text', ['label'=>'Text'])
     ;
         
 return $option_page;
