@@ -31,4 +31,27 @@
       width: 80%;
     }
   }
+
+  &--transparent {
+    background-color: transparent;
+    color: $special;
+    border: 2px solid currentColor;
+
+    &:hover {
+      background-color: $special;
+      color: $light;
+      opacity: 1;
+    }
+  }
+
+  &--light {
+    background-color: $light;
+    color: $special;
+
+    &:hover {
+      background-color: $special;
+      color: $light;
+      opacity: 1;
+    }
+  }
 }

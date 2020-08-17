@@ -39,7 +39,7 @@
             @endif
 
             @if ($link)
-            <a href="{{ $link['link'] }}" class="button button--light" target="{{ $link['target'] }}">
+            <a href="{{ $link['link'] }}" class="button button--transparent" target="{{ $link['target'] }}">
                 {{ $link['title'] }}
             </a>
             @endif
