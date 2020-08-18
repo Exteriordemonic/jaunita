@@ -1,0 +1,111 @@
+.address {
+  @extend %absolute;
+  @extend %flex;
+
+  z-index: 10;
+  left: unset;
+  background: $special-dark;
+  border-top-left-radius: $gutter * 50;
+  border-bottom-left-radius: $gutter * 50;
+  padding: 0 $xxl 0 $xxl+$xl;
+  min-width: $gutter * 90;
+  margin-bottom: 0;
+  color: $white;
+
+  @include mediaTo(sm) {
+    justify-content: flex-start;
+  }
+
+  @include mediaTo(lg) {
+    position: relative;
+    padding: $xl;
+    border-radius: 0;
+    min-width: 0;
+    width: 100%;
+  }
+
+  &__wrapper {
+    @extend %flex;
+
+    align-items: unset;
+
+    @include mediaTo(sm) {
+      display: block;
+    }
+  }
+
+  &__cel {
+    width: 50%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    &:last-child {
+      margin-left: $xl;
+
+      @include mediaTo(sm) {
+        margin-left: 0;
+        margin-top: $xl;
+      }
+    }
+
+    @include mediaTo(sm) {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    @extend %sectionTitle;
+    @extend %heartTitleSmall;
+
+    margin-bottom: $m;
+    white-space: nowrap;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::after {
+      margin-left: $s;
+    }
+  }
+
+  &__text {
+    @extend %text;
+
+    margin-bottom: $xs;
+    position: relative;
+    padding-left: $m + $s;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__icon {
+    @extend %absolute;
+
+    top: $xs + $gutter * 0.4;
+    bottom: unset;
+    right: unset;
+    width: $m;
+    height: $m;
+    fill: $special;
+    color: $special;
+    margin-right: $s;
+
+    path {
+      fill: currentColor;
+    }
+  }
+
+  &__link {
+    color: $light;
+    transition: $transition;
+
+    &:hover {
+      color: $light;
+      opacity: 0.6;
+    }
+  }
+}

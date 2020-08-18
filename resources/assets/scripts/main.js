@@ -15,6 +15,7 @@ import aboutUs from './routes/about';
 import Toggle from './components/toggle';
 import Hero from './components/hero';
 import Testimonials from './components/testimonials';
+import Map from './components/map';
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
@@ -34,6 +35,7 @@ jQuery(document).ready(() => {
     Toggle.init();
     Hero.init();
     Testimonials.init();
+    Map.init();
 
     window.dispatchEvent(new Event('resize'));
     AOS.init();

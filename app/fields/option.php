@@ -43,7 +43,17 @@ $option_page
         ->endRepeater()
         ->addText('offert_tex2', ['label'=>'Text bottom'])
         ->addImage('offert_image', ['label'=>'Image'])
-
+    ->addTab('Map', ['placement' => 'left'])
+        ->addRepeater('pins')
+            ->addImage('icon', ['label'=>'icon'])
+            ->addGoogleMap('pin')
+        ->endRepeater()
+    ->addTab('Address', ['placement' => 'left'])
+        ->addText('address_title', ['label'=>'Visit us title'])
+        ->addText('address_title2', ['label'=>'Hours title'])
+        ->addText('address', ['label'=>'Address'])
+        ->addText('tel', ['label'=>'Phone'])
+        ->addTextarea('hours', ['label'=>'Hours', 'new_lines'=>'br'])
     ;
         
 return $option_page;
