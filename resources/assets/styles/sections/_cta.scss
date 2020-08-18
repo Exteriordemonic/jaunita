@@ -27,6 +27,11 @@
         border-radius: 0;
       }
     }
+
+    #{$root}__bg {
+      left: 0;
+      right: unset;
+    }
   }
 
   &__image-wrapper {
@@ -62,6 +67,7 @@
     border-bottom-left-radius: $gutter * 50;
     padding: $xxl $xxl+$xxl $xxl $xxl+$xl;
     min-width: $gutter * 100;
+    position: relative;
 
     @include mediaTo(md) {
       padding: $xl $l;
@@ -101,5 +107,12 @@
     &:last-child {
       margin-bottom: 0;
     }
+  }
+
+  &__bg {
+    @extend %absolute;
+
+    top: unset;
+    left: unset;
   }
 }

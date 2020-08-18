@@ -38,5 +38,6 @@
                 {{ $link['title'] }}
             </a>
             @endif
+            @svg('big-heart', 'cta__bg')
     </article>
 </section>

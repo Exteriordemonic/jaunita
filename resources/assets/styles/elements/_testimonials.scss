@@ -1,0 +1,135 @@
+.testimonials {
+  padding-top: $l;
+  margin-bottom: $xxl;
+
+  &__title {
+    @extend %sectionTitle;
+    @extend %heartTitleSmall;
+
+    margin-bottom: $l;
+    padding-left: $xxl+$xl;
+
+    @include mediaTo(md) {
+      padding-left: $xl;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__list {
+    @extend %reset-list;
+
+    background: $special-dark;
+    border-top-right-radius: $gutter * 50;
+    border-bottom-right-radius: $gutter * 50;
+    color: $light;
+
+    @include mediaTo(lg) {
+      border-radius: 0;
+    }
+  }
+
+  &__item {
+    padding: $xl $xxl+$xxl $xl $xxl+$xl;
+    border-top-right-radius: $gutter * 50;
+    border-bottom-right-radius: $gutter * 50;
+    overflow: hidden;
+    width: 100%;
+
+    @include mediaTo(lg) {
+      border-radius: 0;
+    }
+
+    &--bg {
+      @extend %absolute;
+      @extend %flex;
+
+      left: unset;
+      right: 0;
+      top: unset;
+      bottom: 0;
+      padding: 0;
+      justify-content: flex-end;
+      align-items: flex-end;
+      height: 100%;
+    }
+
+    @include mediaTo(md) {
+      padding: $xl;
+    }
+  }
+
+  &__subtitle {
+    @extend %text;
+
+    margin-bottom: $m;
+    font-weight: bold;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    @extend %text;
+
+    margin-bottom: $m;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__name {
+    @extend %subtitle;
+
+    font-weight: bold;
+  }
+
+  &__quote {
+    @extend %subtitle;
+    @extend %quote;
+
+    display: inline-block;
+    margin-bottom: $m;
+    font-weight: 400;
+    transform: rotate(180deg);
+  }
+
+  .flickity-button {
+    background-color: transparent;
+    top: unset;
+    bottom: -#{$xl+$l};
+    box-shadow: none !important;
+    transform: translateY(0);
+    height: $xl;
+    z-index: 10;
+
+    &.next {
+      left: $xxl+$xl+$l;
+
+      @include mediaTo(md) {
+        left: $xxl+$xl;
+      }
+    }
+
+    &.previous {
+      left: $xxl+$xl;
+      right: unset;
+
+      @include mediaTo(md) {
+        left: $xxl+$xl;
+      }
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    svg {
+      fill: $dark;
+    }
+  }
+}

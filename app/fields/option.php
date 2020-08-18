@@ -24,6 +24,17 @@ $option_page
             ->addGroup('content', ['label'=>''])
                 ->addText('title', ['label'=>'Title'])
                 ->addTextarea('text', ['label'=>'Text'])
+            ->endGroup()
+        ->endRepeater()
+    ->addTab('Testimonials', ['label' => 'Testimonials', 'placement' => 'left'])
+        ->addText('testimonials_title', ['label'=>'Title'])
+        ->addRepeater('testimonials', ['label'=>'Services'])
+            ->addGroup('content', ['label'=>''])
+                ->addText('title', ['label'=>'Title'])
+                ->addTextarea('text', ['label'=>'Text'])
+                ->addText('name', ['label'=>'Name'])
+            ->endGroup()
+        ->endRepeater()
     ;
         
 return $option_page;

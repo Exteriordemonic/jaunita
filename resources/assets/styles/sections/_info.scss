@@ -1,0 +1,23 @@
+.info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  position: relative;
+  overflow: hidden;
+
+  @include mediaTo(lg) {
+    grid-template-columns: 1fr;
+  }
+
+  &__pattern {
+    @extend %absolute;
+
+    height: 120%;
+    z-index: -1;
+    margin: auto;
+    transform: translateX(50%);
+
+    @include mediaTo(lg) {
+      display: none;
+    }
+  }
+}
