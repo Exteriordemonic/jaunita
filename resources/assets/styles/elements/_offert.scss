@@ -1,0 +1,87 @@
+.offert {
+  position: relative;
+  padding: $l $xxl+$xl $xl $xxl+$xxl;
+  height: 100%;
+
+  @include mediaTo(lg) {
+    padding: $xl $xxl+$xxl $xl $xxl+$xl;
+  }
+
+  @include mediaTo(md) {
+    padding: $xl $xxl+$xxl $xl $xl;
+  }
+
+  @include mediaTo(sm) {
+    padding: $xl;
+  }
+
+  &__title {
+    @extend %sectionTitle;
+    @extend %heartTitleSmall;
+
+    margin-bottom: $l;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    @extend %text;
+
+    margin-bottom: $m;
+
+    &--dashed {
+      font-style: italic;
+      padding-right: $xxl;
+
+      @include mediaTo(sm) {
+        padding-right: 0;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__list {
+    @extend %reset-list;
+
+    margin-bottom: $m;
+    padding-right: $xxl;
+
+    @include mediaTo(sm) {
+      padding-right: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__dot {
+    margin-right: $s;
+  }
+
+  &__image-wrapper {
+    @extend %absolute;
+
+    @include cssLock("width", 360, 1920, (150, 250));
+
+    left: unset;
+    top: unset;
+    margin-bottom: 0;
+  }
+
+  &__image {
+    @extend %image;
+
+    object-fit: contain;
+    object-position: bottom;
+
+    @include mediaTo(sm) {
+      display: none;
+    }
+  }
+}

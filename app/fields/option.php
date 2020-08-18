@@ -35,6 +35,15 @@ $option_page
                 ->addText('name', ['label'=>'Name'])
             ->endGroup()
         ->endRepeater()
+    ->addTab('Offert', ['label' => 'Offert', 'placement' => 'left'])
+        ->addText('offert_title', ['label'=>'Title'])
+        ->addTextarea('offert_text', ['label'=>'Text'])
+        ->addRepeater('offert_list', ['label'=>'List'])
+            ->addText('text', ['label'=>'Text'])
+        ->endRepeater()
+        ->addText('offert_tex2', ['label'=>'Text bottom'])
+        ->addImage('offert_image', ['label'=>'Image'])
+
     ;
         
 return $option_page;
