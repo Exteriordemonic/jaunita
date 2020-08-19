@@ -2,4 +2,44 @@
   &__contact {
     position: relative;
   }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    background-color: $dark;
+    color: $light;
+    padding-top: $l;
+    padding-bottom: $l;
+    gap: $l;
+
+    @include mediaTo(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mediaTo(md) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__copyrights {
+    @extend %text;
+
+    @include mediaTo(md) {
+      text-align: center;
+    }
+
+    @include mediaTo(sm) {
+      order: 10;
+    }
+  }
+
+  &__icon {
+    width: $l;
+    height: $m;
+  }
+
+  &__brand-image {
+    height: $l - 0.3 * $gutter;
+    width: auto;
+  }
 }

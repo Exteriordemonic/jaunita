@@ -1,0 +1,39 @@
+.social-icons {
+  @extend %reset-list;
+  @extend %flex;
+
+  @include mediaTo(lg) {
+    grid-column: span 2;
+    justify-content: flex-end;
+  }
+
+  @include mediaTo(md) {
+    grid-column: span 1;
+    justify-content: center;
+  }
+
+  &__item {
+    padding: 0 $s;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  &__icon {
+    color: $special;
+    transition: $transition;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    path {
+      fill: currentColor;
+    }
+  }
+}

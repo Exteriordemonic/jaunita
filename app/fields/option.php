@@ -54,6 +54,13 @@ $option_page
         ->addText('address', ['label'=>'Address'])
         ->addText('tel', ['label'=>'Phone'])
         ->addTextarea('hours', ['label'=>'Hours', 'new_lines'=>'br'])
+    ->addTab('Footer', ['placement' => 'left'])
+        ->addText('copyrights', ['label'=>'Copyrights'])
+        ->addImage('footer_brand', ['label'=>'Footer brand'])
+    ->addTab('Social Icons', ['placement' => 'left'])
+        ->addUrl('facebook')
+        ->addUrl('twitter')
+        ->addUrl('instagram')
     ;
         
 return $option_page;

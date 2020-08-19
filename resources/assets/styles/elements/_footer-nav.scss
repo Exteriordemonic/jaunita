@@ -1,0 +1,32 @@
+.footer-nav {
+  @extend %reset-list;
+  @extend %flex;
+
+  @include mediaTo(lg) {
+    justify-content: flex-end;
+  }
+
+  @include mediaTo(md) {
+    justify-content: center;
+  }
+
+  @include mediaTo(md) {
+    flex-direction: column;
+  }
+
+  .menu-item {
+    @extend %link;
+
+    color: $special;
+    font-weight: bold;
+
+    @include mediaTo(md) {
+      padding: $s;
+    }
+
+    a {
+      color: currentColor;
+      white-space: nowrap;
+    }
+  }
+}
