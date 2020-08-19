@@ -8,6 +8,10 @@
   min-height: $l;
   z-index: z-index("infobar");
 
+  @include mediaTo("sm") {
+    display: none;
+  }
+
   &__text {
     @extend %text;
 
@@ -16,5 +20,9 @@
 
   &+.header {
     top: $l;
+
+    @include mediaTo("sm") {
+      top: 0;
+    }
   }
 }

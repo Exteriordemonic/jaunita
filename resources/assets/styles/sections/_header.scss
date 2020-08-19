@@ -5,6 +5,18 @@
   bottom: unset;
   padding: $m 0;
   z-index: z-index("header");
+  transition: $transition;
+
+  &.-hide {
+    animation: hideMenu $transition both;
+  }
+
+  &.-show {
+    animation: showMenu $transition both;
+    transform: translateY(-100%);
+    background-color: $dark;
+    top: 0 !important;
+  }
 
   &__wrapper {
     @extend %flex;
@@ -41,5 +53,31 @@
     @include mediaTo(sm) {
       display: block;
     }
+  }
+}
+
+@keyframes hideMenu {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes showMenu {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+    background-color: transparent;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    background-color: $dark;
   }
 }

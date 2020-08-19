@@ -19,6 +19,7 @@ const Toggle = {
 
         if (toggleElem) {
           this.toggleClass(toggleElem);
+
         } else {
           console.warn(`${$this.dataset.toggle} dont exist`);
         }
@@ -28,6 +29,12 @@ const Toggle = {
 
   toggleClass(elem) {
     elem.classList.toggle(this.class);
+
+    if (elem.classList.contains(this.class)) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'visible';
+    }
   },
 }
 

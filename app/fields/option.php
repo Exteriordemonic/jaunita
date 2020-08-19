@@ -54,6 +54,7 @@ $option_page
         ->addText('address', ['label'=>'Address'])
         ->addText('tel', ['label'=>'Phone'])
         ->addTextarea('hours', ['label'=>'Hours', 'new_lines'=>'br'])
+        ->addImage('hours_image', ['label'=>'Hours Image'])
     ->addTab('Footer', ['placement' => 'left'])
         ->addText('copyrights', ['label'=>'Copyrights'])
         ->addImage('footer_brand', ['label'=>'Footer brand'])

@@ -19,7 +19,7 @@
             </p>
         </div>
         <div class="address__cel">
-            <h2 class="address__title">{{ $title }}</h2>
+            <h2 class="address__title">{{ $title2 }}</h2>
             <p class="address__text">
                 @svg('clock', 'address__icon')
                 {!! $hours !!}

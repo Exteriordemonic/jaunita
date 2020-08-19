@@ -8,10 +8,6 @@
     flex-direction: column;
   }
 
-  a {
-    color: $light;
-  }
-
   &-item {
     @extend %link;
 
@@ -21,6 +17,7 @@
     padding-bottom: 0;
     color: $light;
     transition: $transition;
+    position: relative;
 
     @include mediaTo(sm) {
       font-size: 20px;
@@ -44,13 +41,9 @@
         @extend .button--icon;
       }
 
-      @include mediaTo(md) {
+      @include mediaTo(lg) {
         display: none;
       }
-    }
-
-    &:hover {
-      opacity: 0.6;
     }
 
     &:first-child {
@@ -62,11 +55,76 @@
     }
   }
 
+  a,
+  button {
+    color: $light;
+
+    &:hover,
+    &:focus {
+      &+#{$root}__toggle {
+        display: block;
+      }
+    }
+  }
+
+  &__button {
+    @extend .button--icon;
+    @extend .button;
+
+    @include mediaTo(sm) {
+      font-size: 18px;
+      height: auto;
+    }
+  }
+
   &--settings {
     @include cssLock("margin-left", 360, 1920, (15, 30));
 
     #{$root}-item {
       @include cssLock("padding", 360, 1920, (0, 15));
+    }
+  }
+
+  &__toggle {
+    @extend %absolute;
+
+    bottom: unset;
+    top: $xl + $l;
+    right: unset;
+    display: none;
+    background-color: $light;
+    color: $dark;
+    z-index: 10;
+    border-top-right-radius: $l;
+    border-bottom-right-radius: $l;
+    width: auto;
+    animation: showMenuLink $transition both;
+
+    &::before {
+      @extend %pseudo;
+
+      height: calc(100% + #{$xl + $l});
+      width: $xl;
+      bottom: 0;
+      left: 0;
+      right: unset;
+      top: unset;
+      z-index: -1;
+      cursor: pointer;
+    }
+
+    &::after {
+      @extend %pseudo;
+
+      bottom: unset;
+      width: $xl;
+      height: $xs;
+      background: $special;
+      transform: translateY(-100%);
+    }
+
+    &:hover {
+      display: block;
     }
   }
 }

@@ -1,0 +1,59 @@
+.small-map {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+
+  &__header {
+    padding: $l $xl;
+  }
+
+  &__title {
+    @extend %sectionTitle;
+    @extend %heartTitleSmall;
+
+    margin-bottom: $m;
+    white-space: nowrap;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::after {
+      margin-left: $s;
+    }
+  }
+
+  &__text {
+    @extend %text;
+
+    margin-bottom: $xs;
+    position: relative;
+    padding-left: $m + $s;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__icon {
+    @extend %absolute;
+
+    top: $xs + $gutter * 0.4;
+    bottom: unset;
+    right: unset;
+    width: $m;
+    height: $m;
+    fill: $special;
+    color: $special;
+    margin-right: $s;
+
+    path {
+      fill: currentColor;
+    }
+  }
+
+  &__map {
+    height: $gutter * 20;
+    border-bottom-right-radius: $l;
+  }
+}

@@ -1,0 +1,71 @@
+.small-hours {
+  width: 100%;
+  display: block;
+
+  &__header {
+    padding: $l $xl 0;
+  }
+
+  &__title {
+    @extend %sectionTitle;
+    @extend %heartTitleSmall;
+
+    margin-bottom: $m;
+    white-space: nowrap;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::after {
+      margin-left: $s;
+    }
+  }
+
+  &__text {
+    @extend %text;
+
+    margin-bottom: $xs;
+    position: relative;
+    padding-left: $m + $s;
+    white-space: nowrap;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__icon {
+    @extend %absolute;
+
+    top: $xs + $gutter * 0.4;
+    bottom: unset;
+    right: unset;
+    width: $m;
+    height: $m;
+    fill: $special;
+    color: $special;
+    margin-right: $s;
+
+    path {
+      fill: currentColor;
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 0;
+    height: $gutter * 20;
+    border-bottom-right-radius: $l;
+    overflow: hidden;
+  }
+
+  &__image {
+    @extend %absolute;
+    @extend %image;
+
+    object-fit: contain;
+    object-position: right bottom;
+  }
+}

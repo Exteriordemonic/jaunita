@@ -1,20 +1,27 @@
 @php
     $appointment = option('appointment');
+    $phone = option('tel');
 @endphp
 
 <ul class="menu menu--settings">
     <li class="menu-item menu-item--rounded menu-item--icon">
-        <a href="#">
+        <button class="menu__button">
             @svg('map')
-        </a>
+        </button>
+        <div class="menu__toggle">
+            @include('elements.small-map')
+        </div>
     </li>
     <li class="menu-item menu-item--rounded menu-item--icon">
-        <a href="#">
+        <button class="menu__button">
             @svg('clock')
-        </a>
+        </button>
+        <div class="menu__toggle">
+            @include('elements.small-hours')
+        </div>
     </li>
     <li class="menu-item menu-item--rounded menu-item--icon">
-        <a href="#">
+        <a href="tel:{{ $phone }}">
             @svg('phone')
         </a>
     </li>
