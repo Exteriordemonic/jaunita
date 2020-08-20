@@ -5,6 +5,12 @@
     $services = option('services');
 @endphp
 
+@query([
+  'post_type' => 'services',
+  'orderby'   => 'date',
+  'order'     => 'ASC'
+])
+
 <section class="section section--{{$color}} services">
     <div class="container">
         <article class="services__content">
@@ -15,29 +21,24 @@
                 {{ $text }}
             </p>
         </article>
-        @if ($services)    
-            <ul class="services__list">
-                @foreach ($services as $item)
-                @php
-                    $title = $item['content']['title'];
-                    $text = $item['content']['text'];
-                    $img = $item['icon']['ID'];
-                @endphp
-                <li class="services__item">
-                    <article class="services__single">
-                        <figure class="services__image-wrapper">
-                            {!! image($img, 'full', 'services__image') !!}
-                        </figure>
-                        <h3 class="services__subtitle">
-                            {{ $title }}
-                        </h3>
-                        <p class="services__text">
-                            {{ $text }}
-                        </p>
-                    </article>
-                </li>
-                @endforeach
-            </ul>
-        @endif
+        @hasposts
+        <ul class="services__list row">
+            @posts
+            <li class="services__item col-xl-3 col-lg-4 col-md-6 col-xs-12">
+                <a href="@permalink" class="services__single">
+                    <figure class="services__image-wrapper">
+                        @thumbnail('full')
+                    </figure>
+                    <h3 class="services__subtitle">
+                        @title
+                    </h3>
+                    <p class="services__text">
+                        @excerpt
+                    </p>
+                </a>
+            </li>
+            @endposts
+        </ul>
+        @endhasposts
     </div>
 </section>

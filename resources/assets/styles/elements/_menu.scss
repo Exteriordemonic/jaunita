@@ -87,8 +87,14 @@
 
     &:hover,
     &:focus {
+
+      //
       &+#{$root}__toggle {
         display: block;
+      }
+
+      &+.sub-menu {
+        display: flex;
       }
     }
   }

@@ -1,0 +1,94 @@
+.sub-menu {
+  @extend %reset-list;
+  @extend %absolute;
+
+  bottom: unset;
+  top: $xl + $m;
+  right: unset;
+  display: flex;
+  background-color: $light;
+  color: $dark;
+  z-index: 10;
+  border-top-right-radius: $l;
+  border-bottom-right-radius: $l;
+  width: auto;
+  animation: showMenuLink $transition both;
+  flex-direction: column;
+  padding: $l 0;
+
+  &::before {
+    @extend %pseudo;
+
+    height: calc(100% + #{$xl + $l});
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: unset;
+    top: unset;
+    z-index: -1;
+    cursor: pointer;
+  }
+
+  &::after {
+    @extend %pseudo;
+
+    bottom: unset;
+    width: 70%;
+    height: $xs;
+    background: $special;
+    transform: translateY(-100%);
+  }
+
+  &:hover {
+    display: flex;
+  }
+
+  .menu-item {
+    padding: $s $l;
+    position: relative;
+
+    &:first-child {
+      padding: $s $l !important;
+    }
+
+    &::before {
+      @extend %pseudo;
+
+      bottom: 0;
+      top: 0;
+      left: unset;
+      right: $xs;
+      width: $m;
+      height: $m;
+      margin: auto;
+      background-size: $m $m;
+      background-image: url("../icons/heart.svg");
+      transition: $transition;
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+
+    &:hover {
+      &::before {
+        transform: translateX(0%);
+        opacity: 1;
+      }
+    }
+  }
+
+  a {
+    color: $special;
+  }
+}
+
+@keyframes showMenuLink {
+  0% {
+    opacity: 0;
+    transform: translateY(-$l);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

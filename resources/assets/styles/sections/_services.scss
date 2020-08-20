@@ -21,19 +21,20 @@
   &__list {
     @extend %reset-list;
 
-    @include cssLock("gap", 360, 1920, (30, 90));
+    justify-content: center;
+    // @include cssLock("gap", 360, 1920, (30, 90));
 
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    margin-bottom: $l;
+    // display: grid;
+    // grid-template-columns: repeat(4, 1fr);
+    // margin-bottom: $l;
 
-    @include mediaTo(md) {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    // @include mediaTo(md) {
+    //   grid-template-columns: repeat(2, 1fr);
+    // }
 
-    @include mediaTo(sm) {
-      grid-template-columns: repeat(1, 1fr);
-    }
+    // @include mediaTo(sm) {
+    //   grid-template-columns: repeat(1, 1fr);
+    // }
   }
 
   &__image-wrapper {
@@ -45,28 +46,36 @@
     border-radius: 100%;
     transition: $transition;
 
-    &:hover {
-      background: $special;
+    img {
+      @extend %absolute;
+      @extend %image;
 
-      #{$root}__image {
-        filter: brightness(0) invert(0) grayscale(0.6);
-      }
+      object-fit: contain;
+      height: 60%;
+      max-width: 60%;
+      margin: auto;
+      filter: brightness(0) invert(1);
+      transition: $transition;
     }
   }
 
-  &__image {
-    @extend %absolute;
-    @extend %image;
+  &__single {
+    color: $dark;
+    display: block;
 
-    object-fit: contain;
-    height: 60%;
-    max-width: 60%;
-    margin: auto;
-    filter: brightness(0) invert(1);
-    transition: $transition;
+    @include cssLock("padding", 360, 1920, (15, 30));
 
     &:hover {
-      filter: brightness(0) invert(0) grayscale(0.6);
+      color: $dark;
+
+      #{$root}__image-wrapper {
+        background: $special;
+
+        img {
+          filter: brightness(0) invert(0) grayscale(0.6);
+          opacity: 0.6;
+        }
+      }
     }
   }
 

@@ -38,6 +38,7 @@
     "roots/sage-lib": "~9.0.9",
     "soberwp/controller": "~2.1.0",
     "stoutlogic/acf-builder": "^1.10",
+    "log1x/sage-directives": "^1.1",
     "josh-taylor/sage-svg": "^0.2.0"
   },
   "require-dev": {
