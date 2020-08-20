@@ -5,7 +5,7 @@
   bottom: unset;
   top: $xl + $m;
   right: unset;
-  display: flex;
+  display: none;
   background-color: $light;
   color: $dark;
   z-index: 10;
@@ -77,7 +77,7 @@
   }
 
   a {
-    color: $special;
+    color: $dark;
   }
 }
 
