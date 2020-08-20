@@ -8,7 +8,7 @@
       "./scripts/customizer.js"
     ]
   },
-  "publicPath": "/jaunita/wp-content/themes/sage",
+  "publicPath": "/wp-content/themes/sage",
   "devUrl": "http://localhost/jaunita",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",

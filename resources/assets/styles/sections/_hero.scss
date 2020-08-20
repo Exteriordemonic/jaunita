@@ -18,7 +18,7 @@
       background-color: $dark;
 
       #{$root}__image {
-        opacity: 0.6;
+        opacity: 0.6 !important;
       }
     }
 
@@ -39,7 +39,7 @@
   &__content {
     position: relative;
     z-index: 10;
-    width: 65%;
+    width: 55%;
     padding-left: 5%;
 
     @include mediaTo(xl) {

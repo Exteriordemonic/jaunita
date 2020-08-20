@@ -8,9 +8,11 @@
 
     margin-bottom: $l;
     padding-left: $xxl+$xl;
+    padding-right: $xxl+$xl;
 
     @include mediaTo(md) {
       padding-left: $xl;
+      padding-right: $xl;
     }
 
     &:last-child {
