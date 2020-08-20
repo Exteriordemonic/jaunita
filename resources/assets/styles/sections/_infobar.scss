@@ -19,7 +19,7 @@
   }
 
   &+.header {
-    top: $l;
+    top: $l + $s;
 
     @include mediaTo("sm") {
       top: 0;

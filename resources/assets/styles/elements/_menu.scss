@@ -19,6 +19,28 @@
     transition: $transition;
     position: relative;
 
+    &::before {
+      @extend %pseudo;
+
+      bottom: unset;
+      top: -$m -$s;
+      width: $m;
+      height: $m;
+      margin: auto;
+      background-size: $m $m;
+      background-image: url("../icons/heart.svg");
+      transition: $transition;
+      opacity: 0;
+      transform: translateY(100%);
+    }
+
+    &:hover {
+      &::before {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     @include mediaTo(sm) {
       font-size: 20px;
       margin-bottom: $m;
@@ -26,6 +48,10 @@
     }
 
     &--rounded {
+      &::before {
+        display: none;
+      }
+
       a {
         @extend .button;
 

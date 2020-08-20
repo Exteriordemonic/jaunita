@@ -21,5 +21,3 @@
         @include('elements.social-icons')
     </div>
 </footer>
-
-Careers              Privacy Policy              Terms Of Use              Cookie Policy

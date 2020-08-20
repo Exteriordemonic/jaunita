@@ -3,7 +3,7 @@
 
   position: fixed;
   bottom: unset;
-  padding: $m 0;
+  padding: $l 0;
   z-index: z-index("header");
   transition: $transition;
 
@@ -14,7 +14,7 @@
   &.-show {
     animation: showMenu $transition both;
     transform: translateY(-100%);
-    background-color: $dark;
+    background-color: $special-dark;
     top: 0 !important;
   }
 
@@ -78,6 +78,6 @@
   100% {
     opacity: 1;
     transform: translateY(0);
-    background-color: $dark;
+    background-color: $special-dark;
   }
 }
