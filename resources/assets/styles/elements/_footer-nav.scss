@@ -24,6 +24,10 @@
       padding: $s;
     }
 
+    @include mediaTo(sm) {
+      text-align: center;
+    }
+
     a {
       color: currentColor;
       white-space: nowrap;

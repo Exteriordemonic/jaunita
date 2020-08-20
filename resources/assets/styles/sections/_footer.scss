@@ -38,8 +38,20 @@
     height: $m;
   }
 
-  &__brand-image {
-    height: $l - 0.3 * $gutter;
-    width: auto;
+  &__brand {
+    border-left: 1px solid $special;
+    margin-left: $xs;
+
+    @include mediaTo(sm) {
+      border: 0;
+    }
+
+    a {
+      color: inherit !important;
+    }
+
+    #techyscouts-logo-heart {
+      color: $special;
+    }
   }
 }

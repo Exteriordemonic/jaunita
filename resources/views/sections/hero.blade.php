@@ -13,16 +13,19 @@
             $title = $content['title'];
             $subtitle = $content['subtitle']; 
             $link = $content['link'];
+
+            $direction = $content['direction'];
+            $overlay = $content['overlay'] ? 'hero__item--overlay' : '';
         @endphp
-        <li class="hero__item" data-hero-item>
+        <li class="hero__item hero__item--{{ $direction }} {{ $overlay }}" data-hero-item>
             {!! image($iamge, 'full', 'hero__image') !!}
             <div class="container">
                 <article class="hero__content">
                     <h2 class="hero__title">
-                        {{ $title }}
+                        {!! $title !!}
                     </h2>
                     <p class="hero__subtitle">
-                        {{ $subtitle }}
+                        {!! $subtitle !!}
                     </p>
                     @if ($link)
                         <a href="{{ $link['link'] }}" class="button" target="{{ $link['target'] }}">

@@ -2,7 +2,6 @@
 
 @php
     $copyrights = option('copyrights');
-    $brand = option('footer_brand')['ID'];
 @endphp
 
 <footer class="footer">
@@ -14,7 +13,7 @@
         <p class="footer__copyrights">
             © {{ date('Y') }} {{ $copyrights }}
             <span class="footer__brand">
-                @svg('tech', 'footer__icon') // {!! image($brand, 'full', 'footer__brand-image') !!}
+                @include('elements.footer-stamp')
             </span>
         </p>
         @include('elements.footer-nav')

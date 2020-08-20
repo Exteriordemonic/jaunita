@@ -50,7 +50,6 @@ $option_page
         ->addImage('hours_image', ['label'=>'Hours Image 800x600'])
     ->addTab('Footer', ['placement' => 'left'])
         ->addText('copyrights', ['label'=>'Copyrights'])
-        ->addImage('footer_brand', ['label'=>'Footer brand'])
     ->addTab('Social Icons', ['placement' => 'left'])
         ->addUrl('facebook')
         ->addUrl('twitter')
