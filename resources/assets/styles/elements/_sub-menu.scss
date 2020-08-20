@@ -16,6 +16,14 @@
   flex-direction: column;
   padding: $l 0;
 
+  @include mediaTo(sm) {
+    position: relative;
+    top: 0;
+    background-color: $special-dark;
+    padding-top: 0;
+    animation: none;
+  }
+
   &::before {
     @extend %pseudo;
 
@@ -37,6 +45,10 @@
     height: $xs;
     background: $special;
     transform: translateY(-100%);
+
+    @include mediaTo(sm) {
+      display: none;
+    }
   }
 
   &:hover {
@@ -46,6 +58,13 @@
   .menu-item {
     padding: $s $l;
     position: relative;
+    margin-bottom: 0;
+
+    @include mediaTo(sm) {
+      padding: $xs $l;
+      font-size: 16px;
+      animation: none;
+    }
 
     &:first-child {
       padding: $s $l !important;
@@ -78,6 +97,10 @@
 
   a {
     color: $dark;
+
+    @include mediaTo(sm) {
+      color: $light;
+    }
   }
 }
 

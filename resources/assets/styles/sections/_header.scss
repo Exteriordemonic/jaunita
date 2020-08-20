@@ -27,7 +27,7 @@
   &__nav {
     @extend %flex;
 
-    @include mediaTo(sm) {
+    @include mediaTo(md) {
       position: absolute;
       top: 0;
       left: 0;
@@ -38,6 +38,7 @@
       background-color: $special-dark;
       height: 100vh;
       justify-content: flex-start;
+      overflow: auto;
 
       &.-is-active {
         display: flex;
@@ -50,7 +51,7 @@
     display: none;
     z-index: 10;
 
-    @include mediaTo(sm) {
+    @include mediaTo(md) {
       display: block;
     }
   }

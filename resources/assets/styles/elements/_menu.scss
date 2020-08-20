@@ -1,11 +1,15 @@
+/* stylelint-disable  */
+
 .menu {
   $root: &;
 
   @extend %flex;
   @extend %reset-list;
 
-  @include mediaTo(sm) {
+  @include mediaTo(md) {
     flex-direction: column;
+    width: 100%;
+    text-align: center;
   }
 
   &-item {
@@ -18,6 +22,11 @@
     color: $light;
     transition: $transition;
     position: relative;
+
+    @include mediaTo(md) {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
 
     &::before {
       @extend %pseudo;
@@ -32,6 +41,10 @@
       transition: $transition;
       opacity: 0;
       transform: translateY(100%);
+
+      @include mediaTo(md) {
+        display: none;
+      }
     }
 
     &:hover {
@@ -41,10 +54,49 @@
       }
     }
 
-    @include mediaTo(sm) {
+    &.active {
+      &::before {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @include mediaTo(md) {
+        &>a {
+          text-decoration: underline !important;
+        }
+      }
+    }
+
+    &-has-children {
+      &>a {
+        &::after {
+          @extend %pseudo;
+
+          top: -$gutter * 0.4;
+          position: relative;
+          display: inline-block;
+          width: $xs;
+          height: $xs;
+          margin-left: $xs;
+          border: 2px solid currentColor;
+          border-top: 0;
+          border-right: 0;
+          transform: rotate(-45deg);
+        }
+
+        &:hover {
+          &::after {
+            transform: rotate(-225deg);
+          }
+        }
+      }
+    }
+
+    @include mediaTo(md) {
       font-size: 20px;
       margin-bottom: $m;
       animation: showMenuLink $transition both;
+      width: 100%;
     }
 
     &--rounded {
@@ -55,7 +107,7 @@
       a {
         @extend .button;
 
-        @include mediaTo(sm) {
+        @include mediaTo(md) {
           font-size: 18px;
           height: auto;
         }
@@ -103,7 +155,7 @@
     @extend .button--icon;
     @extend .button;
 
-    @include mediaTo(sm) {
+    @include mediaTo(md) {
       font-size: 18px;
       height: auto;
     }
